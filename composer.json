@@ -1,0 +1,21 @@
+{
+    "name": "atwx/silverstripe-cms-popup",
+    "description": "Generic CMS modal popup for SilverStripe 6 with React content components",
+    "type": "silverstripe-vendormodule",
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "silverstripe/framework": "^6",
+        "silverstripe/admin": "^3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Atwx\\CmsPopup\\": "src/"
+        }
+    },
+    "extra": {
+        "expose": [
+            "client/dist"
+        ]
+    }
+}
