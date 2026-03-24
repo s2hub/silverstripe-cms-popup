@@ -29,9 +29,18 @@ window.jQuery.entwine('ss', ($) => {
       }
 
       const root = createRoot(portal);
+      const triggerEl = this[0];
 
       const handleClose = () => {
         root.unmount();
+      };
+
+      const handleSelect = (selectedData) => {
+        triggerEl.dispatchEvent(new CustomEvent('cms-modal:select', {
+          detail: selectedData,
+          bubbles: true,
+        }));
+        handleClose();
       };
 
       const CmsModal = loadComponent('CmsModal');
@@ -39,7 +48,7 @@ window.jQuery.entwine('ss', ($) => {
 
       root.render(
         <CmsModal title={title} size={size} onClose={handleClose}>
-          <ContentComponent data={modalData} onClose={handleClose} />
+          <ContentComponent data={modalData} onClose={handleClose} onSelect={handleSelect} />
         </CmsModal>
       );
     },
