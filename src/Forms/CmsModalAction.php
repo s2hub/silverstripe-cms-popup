@@ -54,9 +54,6 @@ class CmsModalAction extends FormAction
         return $this->modalData;
     }
 
-    /**
-     * @param string $size sm|md|lg
-     */
     public function setButtonIcon(string $icon): static
     {
         $this->addExtraClass($icon);

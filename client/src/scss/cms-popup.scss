@@ -1,0 +1,184 @@
+// CMS Popup Modal – BEM namespace: .cms-popup
+
+// Overlay / Backdrop
+.cms-popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+// Dialog container
+.cms-popup__dialog {
+  background-color: #fff;
+  border-radius: 4px;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+
+  &--sm { width: 480px; }
+  &--md { width: 640px; }
+  &--lg { width: 860px; }
+}
+
+// Header
+.cms-popup__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+// Scrollable body
+.cms-popup__body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 20px;
+}
+
+// Footer with action buttons
+.cms-popup__footer {
+  padding: 12px 20px;
+  border-top: 1px solid #dee2e6;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+// Loading / searching indicator
+.cms-popup__loading {
+  text-align: center;
+  padding: 20px 0;
+}
+
+// Progress bar wrapper
+.cms-popup__progress {
+  margin-bottom: 16px;
+}
+
+.cms-popup__progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 0.9em;
+}
+
+.cms-popup__progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cms-popup__progress-bar {
+  height: 100%;
+  background-color: var(--bs-success, #28a745);
+  transition: width 0.3s ease;
+
+  &--error {
+    background-color: var(--bs-danger, #dc3545);
+  }
+
+  &--running {
+    animation: cms-popup-pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes cms-popup-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+// Summary box (shown after batch completes)
+.cms-popup__summary {
+  margin-bottom: 16px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.cms-popup__summary-success { color: var(--bs-success, #28a745); }
+.cms-popup__summary-warning { color: var(--bs-warning-text, #856404); }
+.cms-popup__summary-error   { color: var(--bs-danger, #dc3545); }
+
+// Batch item list
+.cms-popup__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cms-popup__item {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cms-popup__item-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cms-popup__item-id {
+  color: #6c757d;
+  font-size: 0.85em;
+}
+
+.cms-popup__item-message {
+  margin-left: 24px;
+  color: #6c757d;
+  font-size: 0.85em;
+}
+
+// Detail sub-list
+.cms-popup__item-details {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 24px;
+  font-size: 0.85em;
+}
+
+.cms-popup__item-detail {
+  &--info    { color: var(--bs-success, #28a745); }
+  &--warning { color: var(--bs-warning-text, #856404); }
+  &--error   { color: var(--bs-danger, #dc3545); }
+}
+
+// Spinner
+.cms-popup__spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #dee2e6;
+  border-top-color: #0d6efd;
+  border-radius: 50%;
+  animation: cms-popup-spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes cms-popup-spin {
+  to { transform: rotate(360deg); }
+}
+
+// Status icon
+.cms-popup__status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  flex-shrink: 0;
+}

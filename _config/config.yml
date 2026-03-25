@@ -4,3 +4,5 @@ name: atwx-cms-popup
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
     - 'atwx/silverstripe-cms-popup: client/dist/js/bundle.js'
+  extra_requirements_css:
+    - 'atwx/silverstripe-cms-popup: client/dist/css/cms-popup.css'

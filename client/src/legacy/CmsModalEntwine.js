@@ -3,6 +3,9 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { loadComponent } from 'lib/Injector';
 
+// Key used to store the React root reference on the portal element
+const ROOT_KEY = '__cmsModalRoot';
+
 window.jQuery.entwine('ss', ($) => {
   $('.cms-modal-action').entwine({
     onclick(e) {
@@ -20,7 +23,7 @@ window.jQuery.entwine('ss', ($) => {
         return;
       }
 
-      // Create portal container
+      // Create portal container (once per page)
       let portal = document.getElementById('cms-modal-portal');
       if (!portal) {
         portal = document.createElement('div');
@@ -28,11 +31,19 @@ window.jQuery.entwine('ss', ($) => {
         document.body.appendChild(portal);
       }
 
+      // Unmount any previously mounted modal before rendering a new one
+      if (portal[ROOT_KEY]) {
+        portal[ROOT_KEY].unmount();
+      }
+
       const root = createRoot(portal);
+      portal[ROOT_KEY] = root;
+
       const triggerEl = this[0];
 
       const handleClose = () => {
         root.unmount();
+        portal[ROOT_KEY] = null;
       };
 
       const handleSelect = (selectedData) => {
