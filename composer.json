@@ -8,9 +8,32 @@
         "silverstripe/framework": "^6",
         "silverstripe/admin": "^3"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^11",
+        "squizlabs/php_codesniffer": "^3",
+        "silverstripe/coding-standards": "^3",
+        "rector/rector": "^2"
+    },
     "autoload": {
         "psr-4": {
             "Atwx\\CmsPopup\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Atwx\\CmsPopup\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phpcs": "phpcs",
+        "phpcbf": "phpcbf",
+        "rector": "rector process --dry-run --no-progress-bar",
+        "rector-fix": "rector process --no-progress-bar",
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
