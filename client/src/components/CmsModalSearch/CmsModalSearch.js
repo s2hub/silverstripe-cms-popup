@@ -19,10 +19,10 @@ const CmsModalSearch = ({ data, onSelect }) => {
       setResultsHtml('');
 
       try {
-        // Use ?q= to get all videos (empty query returns all)
+        const q = encodeURIComponent(initialQuery);
         const url = searchEndpoint.includes('?')
-          ? `${searchEndpoint}&q=`
-          : `${searchEndpoint}?q=`;
+          ? `${searchEndpoint}&q=${q}`
+          : `${searchEndpoint}?q=${q}`;
 
         const res = await fetch(url, {
           headers: { 'X-Requested-With': 'XMLHttpRequest' },
@@ -34,6 +34,7 @@ const CmsModalSearch = ({ data, onSelect }) => {
           setResultsHtml(await res.text());
         }
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.error('Initial search error:', e);
         setResultsHtml(`<div class="alert alert-danger">${e.message || 'Network error'}</div>`);
       } finally {
@@ -43,7 +44,7 @@ const CmsModalSearch = ({ data, onSelect }) => {
     };
 
     doInitialSearch();
-  }, [autoSearch, searchEndpoint, initialized]);
+  }, [autoSearch, searchEndpoint, initialQuery, initialized]);
 
   const doSearch = useCallback(
     async (formValues) => {
