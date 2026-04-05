@@ -18,14 +18,13 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.2"
-          tools: cs2pr
+          php-version: "8.3"
 
       - name: Install PHP dependencies
         run: composer install --prefer-dist --no-progress
 
       - name: Run PHPCS
-        run: vendor/bin/phpcs --report=checkstyle | cs2pr
+        run: vendor/bin/phpcs
 
   rector:
     name: "Rector (no changes expected)"
@@ -36,13 +35,13 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.2"
+          php-version: "8.3"
 
       - name: Install PHP dependencies
         run: composer install --prefer-dist --no-progress
 
       - name: Run Rector dry-run
-        run: vendor/bin/rector process --dry-run --no-progress-bar
+        run: vendor/bin/rector process src/ --dry-run --no-progress-bar
 
   php-tests:
     name: "PHPUnit – PHP ${{ matrix.php }}"
