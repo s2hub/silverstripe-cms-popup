@@ -8,11 +8,11 @@ use PHPUnit\Framework\TestCase;
 /**
  * Tests for CmsModalAction getters/setters.
  *
- * Note: CmsModalAction extends SilverStripe\Forms\FormAction, so these tests
- * require SilverStripe to be bootstrapped (full composer install including
- * silverstripe/framework). Run via:  vendor/bin/phpunit
+ * These are plain PHPUnit unit tests run via the standard Composer autoloader.
+ * They exercise CmsModalAction directly and do not rely on a SilverStripe-
+ * specific test bootstrap.
  *
- * @group integration
+ * @group unit
  */
 class CmsModalActionTest extends TestCase
 {

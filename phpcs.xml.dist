@@ -12,7 +12,7 @@
     <!-- SilverStripe coding standard (extends PSR-12) -->
     <rule ref="SilverStripe"/>
 
-    <!-- Allow long lines in test files -->
+    <!-- Exclude test files from the SilverStripe.Files.ClassFound sniff -->
     <rule ref="SilverStripe.Files.ClassFound">
         <exclude-pattern>tests/</exclude-pattern>
     </rule>

@@ -32,7 +32,7 @@ class CmsPopupAdminControllerTest extends TestCase
             ['handler' => CmsPopupAdminController::class, 'pageID' => 42]
         );
 
-        $this->assertSame('CmsPopupAdminController_42', $id);
+        $this->assertSame('CmsPopupAdminController_pageID-42', $id);
     }
 
     public function testBuildIdentifierSortsParamsAlphabetically(): void
@@ -48,7 +48,7 @@ class CmsPopupAdminControllerTest extends TestCase
         );
 
         $this->assertSame($unordered, $ordered);
-        $this->assertSame('CmsPopupAdminController_first_last', $unordered);
+        $this->assertSame('CmsPopupAdminController_a-first_z-last', $unordered);
     }
 
     public function testBuildIdentifierStripsHandlerKey(): void
@@ -60,7 +60,7 @@ class CmsPopupAdminControllerTest extends TestCase
 
         // 'handler' must not appear in the suffix
         $this->assertStringNotContainsString('SomeHandler', $id);
-        $this->assertSame('CmsPopupAdminController_7', $id);
+        $this->assertSame('CmsPopupAdminController_id-7', $id);
     }
 
     public function testBuildIdentifierUsesShortClassName(): void

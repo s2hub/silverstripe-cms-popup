@@ -115,7 +115,11 @@ class CmsPopupAdminController extends LeftAndMain
         $params = $vars;
         unset($params['handler']);
         ksort($params);
-        $id = empty($params) ? '' : '_' . implode('_', array_values($params));
+        $id = empty($params) ? '' : '_' . implode('_', array_map(
+            fn($k, $v) => "{$k}-{$v}",
+            array_keys($params),
+            array_values($params)
+        ));
         return $shortName . $id;
     }
 

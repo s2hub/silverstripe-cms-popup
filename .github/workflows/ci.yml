@@ -22,7 +22,7 @@ jobs:
           tools: cs2pr
 
       - name: Install PHP dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run PHPCS
         run: vendor/bin/phpcs --report=checkstyle | cs2pr
@@ -39,7 +39,7 @@ jobs:
           php-version: "8.2"
 
       - name: Install PHP dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run Rector dry-run
         run: vendor/bin/rector process --dry-run --no-progress-bar
@@ -61,7 +61,7 @@ jobs:
           coverage: xdebug
 
       - name: Install PHP dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit --coverage-text
