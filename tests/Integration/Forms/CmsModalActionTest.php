@@ -1,6 +1,6 @@
 <?php
 
-namespace Atwx\CmsPopup\Tests\Unit\Forms;
+namespace Atwx\CmsPopup\Tests\Integration\Forms;
 
 use Atwx\CmsPopup\Forms\CmsModalAction;
 use PHPUnit\Framework\TestCase;

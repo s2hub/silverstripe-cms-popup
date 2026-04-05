@@ -8,19 +8,13 @@
          failOnWarning="true">
 
     <testsuites>
-        <!-- Default: only unit tests (no SilverStripe bootstrap required) -->
+        <!-- Pure unit tests; no SilverStripe bootstrap or database required.
+             Integration tests live in tests/Integration/ and must be run
+             explicitly: vendor/bin/phpunit tests/Integration/ -->
         <testsuite name="unit">
             <directory>tests/Unit/</directory>
         </testsuite>
     </testsuites>
-
-    <!-- Integration tests require a full SilverStripe stack with a database.
-         Run explicitly: vendor/bin/phpunit -group integration -->
-    <groups>
-        <exclude>
-            <group>integration</group>
-        </exclude>
-    </groups>
 
     <source>
         <include>
