@@ -8,7 +8,7 @@ const PATHS = {
 };
 
 const config = [
-  new JavascriptWebpackConfig('js', PATHS, 'atwx/silverstripe-cms-popup')
+  new JavascriptWebpackConfig('js', PATHS, 's2hub/silverstripe-cms-popup')
     .setEntry({
       bundle: `${PATHS.SRC}/bundles/bundle.js`,
     })

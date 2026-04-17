@@ -1,6 +1,6 @@
 <?php
 
-namespace Atwx\CmsPopup\Forms;
+namespace S2Hub\CmsPopup\Forms;
 
 use SilverStripe\Forms\FormAction;
 

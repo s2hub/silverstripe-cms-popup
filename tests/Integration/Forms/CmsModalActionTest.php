@@ -1,8 +1,8 @@
 <?php
 
-namespace Atwx\CmsPopup\Tests\Integration\Forms;
+namespace S2Hub\CmsPopup\Tests\Integration\Forms;
 
-use Atwx\CmsPopup\Forms\CmsModalAction;
+use S2Hub\CmsPopup\Forms\CmsModalAction;
 use PHPUnit\Framework\TestCase;
 
 /**

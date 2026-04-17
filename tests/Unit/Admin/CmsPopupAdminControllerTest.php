@@ -1,8 +1,8 @@
 <?php
 
-namespace Atwx\CmsPopup\Tests\Unit\Admin;
+namespace S2Hub\CmsPopup\Tests\Unit\Admin;
 
-use Atwx\CmsPopup\Admin\CmsPopupAdminController;
+use S2Hub\CmsPopup\Admin\CmsPopupAdminController;
 use PHPUnit\Framework\TestCase;
 
 /**

@@ -1,8 +1,8 @@
 <?php
 
-namespace Atwx\CmsPopup\Admin;
+namespace S2Hub\CmsPopup\Admin;
 
-use Atwx\CmsPopup\Handler\CmsPopupHandler;
+use S2Hub\CmsPopup\Handler\CmsPopupHandler;
 use SilverStripe\Admin\LeftAndMain;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;

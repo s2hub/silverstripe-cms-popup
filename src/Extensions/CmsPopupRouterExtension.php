@@ -1,8 +1,8 @@
 <?php
 
-namespace Atwx\CmsPopup\Extensions;
+namespace S2Hub\CmsPopup\Extensions;
 
-use Atwx\CmsPopup\Admin\CmsPopupAdminController;
+use S2Hub\CmsPopup\Admin\CmsPopupAdminController;
 use SilverStripe\Core\Extension;
 
 /**

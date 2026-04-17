@@ -1,8 +1,8 @@
 <?php
 
-namespace Atwx\CmsPopup\Control;
+namespace S2Hub\CmsPopup\Control;
 
-use Atwx\CmsPopup\Handler\CmsPopupSearchHandler;
+use S2Hub\CmsPopup\Handler\CmsPopupSearchHandler;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\Director;
 use SilverStripe\Control\HTTPRequest;

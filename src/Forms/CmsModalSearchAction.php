@@ -1,8 +1,8 @@
 <?php
 
-namespace Atwx\CmsPopup\Forms;
+namespace S2Hub\CmsPopup\Forms;
 
-use Atwx\CmsPopup\Control\CmsPopupSearchRouterController;
+use S2Hub\CmsPopup\Control\CmsPopupSearchRouterController;
 
 class CmsModalSearchAction extends CmsModalAction
 {

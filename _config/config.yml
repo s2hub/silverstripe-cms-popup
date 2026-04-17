@@ -1,13 +1,13 @@
 ---
-name: atwx-cms-popup
+name: s2hub-cms-popup
 ---
 SilverStripe\Admin\LeftAndMain:
   extra_requirements_javascript:
-    - 'atwx/silverstripe-cms-popup: client/dist/js/bundle.js'
+    - 's2hub/silverstripe-cms-popup: client/dist/js/bundle.js'
   extra_requirements_css:
-    - 'atwx/silverstripe-cms-popup: client/dist/css/cms-popup.css'
+    - 's2hub/silverstripe-cms-popup: client/dist/css/cms-popup.css'
 
 SilverStripe\Control\Director:
   rules:
-    'cms-search//$Action': 'Atwx\CmsPopup\Control\CmsPopupSearchRouterController'
-    'cms-batch//$Action': 'Atwx\CmsPopup\Control\CmsPopupBatchRouterController'
+    'cms-search//$Action': 'S2Hub\CmsPopup\Control\CmsPopupSearchRouterController'
+    'cms-batch//$Action': 'S2Hub\CmsPopup\Control\CmsPopupBatchRouterController'

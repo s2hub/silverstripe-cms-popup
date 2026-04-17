@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="Atwx CmsPopup">
-    <description>PHP_CodeSniffer configuration for atwx/silverstripe-cms-popup</description>
+<ruleset name="S2Hub CmsPopup">
+    <description>PHP_CodeSniffer configuration for s2hub/silverstripe-cms-popup</description>
 
     <file>src/</file>
     <file>tests/</file>

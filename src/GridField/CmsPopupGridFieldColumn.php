@@ -1,9 +1,9 @@
 <?php
 
-namespace Atwx\CmsPopup\GridField;
+namespace S2Hub\CmsPopup\GridField;
 
-use Atwx\CmsPopup\Admin\CmsPopupAdminController;
-use Atwx\CmsPopup\Handler\CmsPopupHandler;
+use S2Hub\CmsPopup\Admin\CmsPopupAdminController;
+use S2Hub\CmsPopup\Handler\CmsPopupHandler;
 use SilverStripe\Forms\GridField\GridField_ColumnProvider;
 use SilverStripe\ORM\DataObject;
 

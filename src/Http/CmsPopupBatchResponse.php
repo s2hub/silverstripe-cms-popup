@@ -1,6 +1,6 @@
 <?php
 
-namespace Atwx\CmsPopup\Http;
+namespace S2Hub\CmsPopup\Http;
 
 use SilverStripe\Control\HTTPResponse;
 

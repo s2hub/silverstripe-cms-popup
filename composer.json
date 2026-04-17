@@ -1,5 +1,5 @@
 {
-    "name": "atwx/silverstripe-cms-popup",
+    "name": "s2hub/silverstripe-cms-popup",
     "description": "Generic CMS modal popup for SilverStripe 6 with React content components",
     "type": "silverstripe-vendormodule",
     "license": "MIT",
@@ -15,12 +15,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Atwx\\CmsPopup\\": "src/"
+            "S2Hub\\CmsPopup\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Atwx\\CmsPopup\\Tests\\": "tests/"
+            "S2Hub\\CmsPopup\\Tests\\": "tests/"
         }
     },
     "scripts": {

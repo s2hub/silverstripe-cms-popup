@@ -1,8 +1,8 @@
 <?php
 
-namespace Atwx\CmsPopup\Forms;
+namespace S2Hub\CmsPopup\Forms;
 
-use Atwx\CmsPopup\Admin\CmsPopupAdminController;
+use S2Hub\CmsPopup\Admin\CmsPopupAdminController;
 
 /**
  * Convenience action for opening a SilverStripe FormSchema inside the modal.
@@ -62,7 +62,7 @@ class CmsModalFormSchemaAction extends CmsModalAction
      * Factory: connect this action to a CmsPopupHandler subclass.
      * Automatically generates the schemaUrl and form identifier.
      *
-     * @param class-string<\Atwx\CmsPopup\Handler\CmsPopupHandler> $handlerClass
+     * @param class-string<\S2Hub\CmsPopup\Handler\CmsPopupHandler> $handlerClass
      * @param array<string,mixed> $params  Record-identifying query params, e.g. ['pageID' => $this->ID]
      */
     public static function forHandler(string $handlerClass, array $params = [], string $title = ''): static

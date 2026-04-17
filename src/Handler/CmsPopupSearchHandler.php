@@ -1,6 +1,6 @@
 <?php
 
-namespace Atwx\CmsPopup\Handler;
+namespace S2Hub\CmsPopup\Handler;
 
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Forms\FieldList;

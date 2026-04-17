@@ -9,7 +9,7 @@ Opens modal dialogs in the SilverStripe CMS from a button in the form action men
 ## Installation
 
 ```bash
-composer require atwx/silverstripe-cms-popup
+composer require s2hub/silverstripe-cms-popup
 ```
 
 The module registers itself automatically in `LeftAndMain`. No additional YAML configuration required.
@@ -23,7 +23,7 @@ Opens a dialog with a server-rendered search form. The user enters search terms;
 Create a handler class that extends `CmsPopupSearchHandler`:
 
 ```php
-use Atwx\CmsPopup\Handler\CmsPopupSearchHandler;
+use S2Hub\CmsPopup\Handler\CmsPopupSearchHandler;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TextField;
@@ -54,7 +54,7 @@ class MySearchHandler extends CmsPopupSearchHandler
 ```
 
 ```php
-use Atwx\CmsPopup\Forms\CmsModalSearchAction;
+use S2Hub\CmsPopup\Forms\CmsModalSearchAction;
 
 $action = CmsModalSearchAction::forHandler(MySearchHandler::class)
     ->setModalTitle('Select a record')
@@ -93,7 +93,7 @@ document.querySelector('.my-trigger-button').addEventListener('cms-modal:select'
 Opens a dialog with a configuration form. After clicking "Start", queue items are sent one by one to an action endpoint; progress is displayed live.
 
 ```php
-use Atwx\CmsPopup\Handler\CmsPopupBatchHandler;
+use S2Hub\CmsPopup\Handler\CmsPopupBatchHandler;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Forms\FieldList;
@@ -127,7 +127,7 @@ class MyBatchHandler extends CmsPopupBatchHandler
 ```
 
 ```php
-use Atwx\CmsPopup\Forms\CmsModalBatchAction;
+use S2Hub\CmsPopup\Forms\CmsModalBatchAction;
 
 $action = CmsModalBatchAction::forHandler(MyBatchHandler::class, ['pageID' => $this->ID])
     ->setModalTitle('Run batch')
@@ -151,8 +151,8 @@ The batch endpoints are routed automatically via `CmsPopupBatchRouterController`
 ### Response helpers
 
 ```php
-use Atwx\CmsPopup\Http\CmsPopupBatchResponse;
-use Atwx\CmsPopup\Http\CmsPopupBatchDetail;
+use S2Hub\CmsPopup\Http\CmsPopupBatchResponse;
+use S2Hub\CmsPopup\Http\CmsPopupBatchDetail;
 
 return CmsPopupBatchResponse::success('Processed', [
     CmsPopupBatchDetail::info('en_US', 'OK'),
@@ -180,7 +180,7 @@ Opens a full SilverStripe form in the modal using `FormBuilderLoader`. Supports 
 Create a handler class that extends `CmsPopupHandler`:
 
 ```php
-use Atwx\CmsPopup\Handler\CmsPopupHandler;
+use S2Hub\CmsPopup\Handler\CmsPopupHandler;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
@@ -208,7 +208,7 @@ class MyRecordPopup extends CmsPopupHandler
 ```
 
 ```php
-use Atwx\CmsPopup\Forms\CmsModalFormSchemaAction;
+use S2Hub\CmsPopup\Forms\CmsModalFormSchemaAction;
 
 $action = CmsModalFormSchemaAction::forHandler(MyRecordPopup::class, ['recordID' => $this->ID])
     ->setModalTitle('Edit record')
@@ -222,7 +222,7 @@ The form endpoint is routed automatically via `CmsPopupAdminController` at `/adm
 Use `CmsPopupGridFieldColumn` to add a per-row popup button to a GridField:
 
 ```php
-use Atwx\CmsPopup\GridField\CmsPopupGridFieldColumn;
+use S2Hub\CmsPopup\GridField\CmsPopupGridFieldColumn;
 
 $config->addComponent(new CmsPopupGridFieldColumn(
     MyRecordPopup::class,
@@ -240,7 +240,7 @@ After a successful save, the GridField is automatically reloaded.
 Loads arbitrary HTML from a URL into the dialog.
 
 ```php
-use Atwx\CmsPopup\Forms\CmsModalAction;
+use S2Hub\CmsPopup\Forms\CmsModalAction;
 
 $action = CmsModalAction::create('showInfo', 'Show details')
     ->setModalComponent('CmsModalContent')
@@ -315,7 +315,7 @@ The component receives the props `data` (from `setModalData()`), `onClose`, `onS
 ## Building assets
 
 ```bash
-cd vendor/atwx/silverstripe-cms-popup
+cd vendor/s2hub/silverstripe-cms-popup
 npm install
 npm run build   # production
 npm run dev     # development
