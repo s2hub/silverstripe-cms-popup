@@ -9,6 +9,7 @@ use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
+use SilverStripe\i18n\i18n;
 use SilverStripe\Security\Security;
 
 class CmsPopupSearchRouterController extends Controller
@@ -31,6 +32,10 @@ class CmsPopupSearchRouterController extends Controller
         parent::init();
         if (!Security::getCurrentUser()) {
             $this->httpError(403, 'Forbidden');
+        }
+        $member = Security::getCurrentUser();
+        if ($member && !empty($member->Locale)) {
+            i18n::set_locale($member->Locale);
         }
     }
 

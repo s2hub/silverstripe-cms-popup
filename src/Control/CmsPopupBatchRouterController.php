@@ -9,6 +9,7 @@ use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Control\HTTPResponse;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\Form;
+use SilverStripe\i18n\i18n;
 use SilverStripe\Security\Permission;
 use SilverStripe\Security\Security;
 
@@ -33,6 +34,10 @@ class CmsPopupBatchRouterController extends Controller
         parent::init();
         if (!Security::getCurrentUser() || !Permission::check('CMS_ACCESS_CMSMain')) {
             $this->httpError(403, 'Forbidden');
+        }
+        $member = Security::getCurrentUser();
+        if ($member && !empty($member->Locale)) {
+            i18n::set_locale($member->Locale);
         }
     }
 
